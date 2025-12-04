@@ -7,11 +7,14 @@
     <title>Profit Accelerator Program | Timberdart AI</title>
 
     <!-- Preload critical image -->
-    <link rel="preload" href="assets/mockup-2.png" as="image">
+    <link rel="preload" href="assets/mockup-2.webp" as="image">
 
-    <!-- Preconnect to Google Fonts for performance -->
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cal.com">
+
+    <!-- Load fonts with display swap to prevent FOIT -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -798,13 +801,13 @@
                     <h1>The Agency Profit Accelerator Blueprint</h1>
                     <p class="hero-description">7 AI systems that help agencies close 2-3× more deals. Without spending more on ads, outreach, or hiring.</p>
                     <div class="hero-image-mobile">
-                        <img src="assets/mockup-2.png" alt="Profit Accelerator Blueprint" fetchpriority="high" decoding="async" />
+                        <img src="assets/mockup-2.webp" alt="Profit Accelerator Blueprint" fetchpriority="high" decoding="async" />
                     </div>
                     <a href="https://cal.com/timberdart/ai-automation-audit" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Audit + Get The Blueprint</a>
                     <p class="hero-subtext">You walk away with the blueprint and 3 recommendations tailored to your agency.<br>If working together makes sense, we'll discuss it. Either way, you leave with value.</p>
                 </div>
                 <div class="hero-image-desktop">
-                    <img src="assets/mockup-2.png" alt="Profit Accelerator Blueprint" fetchpriority="high" decoding="async" />
+                    <img src="assets/mockup-2.webp" alt="Profit Accelerator Blueprint" fetchpriority="high" decoding="async" />
                 </div>
             </div>
         </div>
@@ -977,42 +980,51 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT - Non-blocking -->
     <script>
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // Run after DOM is fully loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        function init() {
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections except hero
+            document.querySelectorAll('section:not(.hero)').forEach(section => {
+                observer.observe(section);
             });
-        }, observerOptions);
 
-        // Observe all sections except hero
-        document.querySelectorAll('section:not(.hero)').forEach(section => {
-            observer.observe(section);
-        });
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>

@@ -6,9 +6,11 @@
     <meta name="description" content="Your AI Automation Audit is confirmed. Get ready for your call with Timberdart AI.">
     <title>Booking Confirmed | Timberdart AI</title>
 
-    <!-- Preconnect to Google Fonts for performance -->
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load fonts with display swap to prevent FOIT -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -318,32 +320,41 @@
         <div class="logo">Timberdart AI</div>
     </div>
 
-    <!-- JavaScript to parse URL parameters -->
+    <!-- JavaScript to parse URL parameters - Non-blocking -->
     <script>
-        // Function to get URL parameters
-        function getURLParameter(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
+        // Run after DOM is fully loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
         }
 
-        // Get email and name from URL parameters
-        const userEmail = getURLParameter('email');
-        const userName = getURLParameter('name');
+        function init() {
+            // Function to get URL parameters
+            function getURLParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
 
-        // Display email
-        const emailElement = document.getElementById('userEmail');
-        if (userEmail) {
-            emailElement.textContent = userEmail;
-        } else {
-            emailElement.textContent = 'your email';
-        }
+            // Get email and name from URL parameters
+            const userEmail = getURLParameter('email');
+            const userName = getURLParameter('name');
 
-        // Display name
-        const nameElement = document.getElementById('userName');
-        if (userName) {
-            nameElement.textContent = userName;
-        } else {
-            nameElement.textContent = 'there';
+            // Display email
+            const emailElement = document.getElementById('userEmail');
+            if (userEmail) {
+                emailElement.textContent = userEmail;
+            } else {
+                emailElement.textContent = 'your email';
+            }
+
+            // Display name
+            const nameElement = document.getElementById('userName');
+            if (userName) {
+                nameElement.textContent = userName;
+            } else {
+                nameElement.textContent = 'there';
+            }
         }
     </script>
 </body>
