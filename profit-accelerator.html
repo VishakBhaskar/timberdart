@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get The Profit Accelerator Blueprint + Book Your Free Automation Audit. Add 20+ appointments per month with AI-powered automation.">
+    <title>Profit Accelerator Program | Timberdart AI</title>
+
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1F2937;
+            background-color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+
+        /* ===== SECTIONS BASE ===== */
+        section {
+            padding: 60px 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 50%, #BFDBFE 100%);
+            padding-top: 2rem;
+            opacity: 1;
+            transform: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-image-mobile {
+            display: none;
+        }
+
+        .hero-image-desktop {
+            position: relative;
+            animation: fadeInUp 1s ease 0.3s backwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-desktop img,
+        .hero-image-mobile img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Radial gradient blend effect for desktop */
+        .hero-image-desktop::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(
+                ellipse at center,
+                #FFFFFF 0%,
+                #FFFFFF 15%,
+                rgba(255, 255, 255, 0.95) 25%,
+                rgba(239, 246, 255, 0.9) 35%,
+                rgba(219, 234, 254, 0.7) 50%,
+                rgba(191, 219, 254, 0.4) 65%,
+                transparent 80%
+            );
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-image-desktop img {
+            margin: 0 auto;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #1F2937;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 1.375rem;
+            color: #4B5563;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-subtext {
+            font-size: 1.0625rem !important;
+            color: #6B7280 !important;
+            margin-top: 1.5rem !important;
+            font-style: italic;
+            line-height: 1.6 !important;
+        }
+
+        .btn-primary {
+            background: #DC2626;
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-primary:hover {
+            background: #B91C1C;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.5);
+        }
+
+        h2 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: #1F2937;
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        /* ===== PAIN SECTION ===== */
+        .pain-section {
+            background: #FFFFFF;
+        }
+
+        .pain-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pain-intro {
+            font-size: 1.25rem;
+            color: #4B5563;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .pain-list {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .pain-list li {
+            font-size: 1.125rem;
+            color: #1F2937;
+            padding: 1rem 0 1rem 2.5rem;
+            position: relative;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .pain-list li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+            font-size: 1.25rem;
+        }
+
+        .cost-breakdown {
+            background: #FEF2F2;
+            border: 2px solid #DC2626;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .cost-breakdown h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .cost-breakdown p {
+            font-size: 1.125rem;
+            color: #4B5563;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .comparison-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .comparison-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-box.without {
+            border-left: 4px solid #DC2626;
+        }
+
+        .comparison-box.with {
+            border-left: 4px solid #10B981;
+        }
+
+        .comparison-box h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-box.without h4 {
+            color: #DC2626;
+        }
+
+        .comparison-box.with h4 {
+            color: #10B981;
+        }
+
+        .comparison-box ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-box ul li {
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            color: #4B5563;
+        }
+
+        .comparison-result {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 1rem;
+        }
+
+        .comparison-box.without .comparison-result {
+            color: #DC2626;
+        }
+
+        .comparison-box.with .comparison-result {
+            color: #10B981;
+        }
+
+        .closing-statement {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 2.5rem;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin-top: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== WHAT YOU GET SECTION ===== */
+        .what-you-get {
+            background: #F9FAFB;
+        }
+
+        .benefit-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563EB;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card ul {
+            list-style: none;
+        }
+
+        .benefit-card ul li {
+            font-size: 1.0625rem;
+            color: #1F2937;
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .benefit-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .best-part {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            font-size: 1.25rem;
+            color: #1F2937;
+            line-height: 1.8;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ===== 7 SYSTEMS SECTION ===== */
+        .systems-section {
+            background: #FFFFFF;
+        }
+
+        .systems-intro {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #4B5563;
+            margin-top: -1rem;
+            margin-bottom: 0;
+        }
+
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .systems-closing {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #1F2937;
+            font-weight: 600;
+            margin-top: 3rem;
+        }
+
+        .system-card {
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 2px solid #93C5FD;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+            transition: transform 0.5s ease;
+        }
+
+        .system-card:hover::before {
+            transform: translate(-25%, -25%);
+        }
+
+        .system-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+            border-color: #2563EB;
+        }
+
+        .system-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #2563EB;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .system-card h3 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .system-card p {
+            font-size: 1.0625rem;
+            color: #4B5563;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== WHO THIS IS FOR SECTION ===== */
+        .who-section {
+            background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+        }
+
+        .who-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .who-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .who-list li {
+            font-size: 1.25rem;
+            color: #1F2937;
+            padding: 1.25rem 0 1.25rem 3rem;
+            position: relative;
+            line-height: 1.7;
+            font-weight: 600;
+        }
+
+        .who-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* ===== WHAT HAPPENS NEXT SECTION ===== */
+        .next-steps {
+            background: #FFFFFF;
+        }
+
+        .steps-container {
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .step-content h3 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            font-size: 1.125rem;
+            color: #4B5563;
+            line-height: 1.7;
+        }
+
+        .trust-note {
+            background: #FEF2F2;
+            border: 2px solid #DC2626;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .trust-note p {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #DC2626;
+            margin: 0;
+        }
+
+        .guarantee {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #4B5563;
+            margin-top: 2rem;
+            font-style: italic;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #1F2937;
+            color: #D1D5DB;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact p {
+            color: #D1D5DB;
+            font-size: 1.125rem;
+            margin: 0;
+        }
+
+        .footer-contact a {
+            color: #60A5FA;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #93C5FD;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2563EB;
+            margin-top: 2rem;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9CA3AF;
+            font-size: 0.875rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-image-desktop {
+                display: none;
+            }
+
+            .hero-image-mobile {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 2rem 0;
+                position: relative;
+            }
+
+            /* Radial gradient blend effect for mobile */
+            .hero-image-mobile::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 120%;
+                height: 120%;
+                background: radial-gradient(
+                    ellipse at center,
+                    #FFFFFF 0%,
+                    #FFFFFF 20%,
+                    rgba(255, 255, 255, 0.95) 30%,
+                    rgba(239, 246, 255, 0.85) 40%,
+                    rgba(219, 234, 254, 0.6) 55%,
+                    rgba(191, 219, 254, 0.3) 70%,
+                    transparent 85%
+                );
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            .hero-image-mobile img {
+                max-width: 90%;
+                display: block;
+                margin: 0 auto;
+                position: relative;
+                z-index: 2;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+
+            .hero-description {
+                font-size: 1.125rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 40px 1.5rem;
+            }
+
+            .btn-primary {
+                padding: 1rem 2rem;
+                font-size: 1.125rem;
+                width: 100%;
+            }
+
+            .comparison-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .systems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 992px) and (min-width: 769px) {
+            .hero-grid {
+                gap: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.1;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .hero-image-mobile {
+                margin: 1.5rem 0;
+            }
+
+            .hero-image-mobile img {
+                max-width: 95%;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>The Agency Profit Accelerator Blueprint</h1>
+                    <p class="hero-description">7 AI systems that help agencies close 2-3× more deals. Without spending more on ads, outreach, or hiring.</p>
+                    <div class="hero-image-mobile">
+                        <img src="assets/mockup-2.png" alt="Profit Accelerator Blueprint" />
+                    </div>
+                    <a href="https://cal.com/timberdart/ai-automation-audit" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Audit + Get The Blueprint</a>
+                    <p class="hero-subtext">You walk away with the blueprint and 3 recommendations tailored to your agency.<br>If working together makes sense, we'll discuss it. Either way, you leave with value.</p>
+                </div>
+                <div class="hero-image-desktop">
+                    <img src="assets/mockup-2.png" alt="Profit Accelerator Blueprint" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET SECTION -->
+    <section class="what-you-get" id="what-you-get">
+        <div class="container">
+            <h2>What You Get</h2>
+
+            <div class="benefit-cards">
+                <div class="benefit-card">
+                    <h3>What's Inside The Blueprint:</h3>
+                    <ul>
+                        <li>7 systems agencies use to close more deals without spending more</li>
+                        <li>How each system works</li>
+                        <li>Templates you can customize for your business</li>
+                        <li>What to expect when you implement</li>
+                    </ul>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>What Happens On The Audit Call:</h3>
+                    <ul>
+                        <li>We walk through the blueprint together (30 minutes)</li>
+                        <li>I audit your current setup</li>
+                        <li>You get 3 recommendations specific to your agency</li>
+                        <li>Bonus: I'll share an 8th system not in the blueprint</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="best-part">The best part: You don't need all 7 systems to make more money. Even if you implement just 3 of these, you'll close more clients. I've seen it work every single time.</p>
+
+            <div class="cta-center">
+                <a href="https://cal.com/timberdart/ai-automation-audit" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Audit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7 SYSTEMS SECTION -->
+    <section class="systems-section" id="systems">
+        <div class="container">
+            <h2>The 7 Systems</h2>
+            <p class="systems-intro">Inside The Blueprint:</p>
+
+            <div class="systems-grid">
+                <div class="system-card">
+                    <div class="system-number">1</div>
+                    <h3>Instant Lead Response Engine</h3>
+                    <p>Reply to leads in under 10 seconds</p>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-number">2</div>
+                    <h3>AI Follow-Up System</h3>
+                    <p>Turn silent leads into booked calls</p>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-number">3</div>
+                    <h3>Automated Proposal Engine</h3>
+                    <p>Send proposals in minutes</p>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-number">4</div>
+                    <h3>No-Show Eliminator</h3>
+                    <p>Get more people to show up</p>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-number">5</div>
+                    <h3>Lead Revival System</h3>
+                    <p>Convert old CRM leads into revenue</p>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-number">6</div>
+                    <h3>Client Onboarding Automation</h3>
+                    <p>Start relationships right</p>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-number">7</div>
+                    <h3>Workflow Automation Hub</h3>
+                    <p>Eliminate hours of admin work</p>
+                </div>
+            </div>
+
+            <p class="systems-closing">Pick the 3 that solve your biggest problems. Implement those first.</p>
+
+            <div class="cta-center">
+                <a href="https://cal.com/timberdart/ai-automation-audit" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Audit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO THIS IS FOR SECTION -->
+    <section class="who-section" id="who">
+        <div class="container">
+            <div class="who-content">
+                <h2>This Is For You If:</h2>
+                <ul class="who-list">
+                    <li>You want to close 2-3× more deals from your current leads</li>
+                    <li>You're spending money on leads that slip through the cracks</li>
+                    <li>You're ready to fix the systems costing you revenue</li>
+                    <li>You want to grow without adding headcount</li>
+                    <li>You're tired of losing deals to faster competitors</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT HAPPENS NEXT SECTION -->
+    <section class="next-steps" id="next">
+        <div class="container">
+            <h2>How It Works</h2>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Book your audit using the calendar below</h3>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>You'll get The Profit Accelerator Blueprint via email immediately</h3>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>We walk through it together on the call + I audit your setup</h3>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>You leave with 3 actionable recommendations</h3>
+                    </div>
+                </div>
+            </div>
+
+            <p class="guarantee">Value first. If there's a fit, we'll talk about next steps.</p>
+
+            <div class="cta-center">
+                <a href="https://cal.com/timberdart/ai-automation-audit" class="btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Audit + Get The Blueprint</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="book">
+        <div class="container">
+            <h3>Questions?</h3>
+            <div class="footer-contact">
+                <p>Email: <a href="mailto:timberdart@gmail.com">timberdart@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/vishak-bhaskar-a67aab201/" target="_blank" rel="noopener noreferrer">Vishak Bhaskar</a></p>
+            </div>
+            <div class="footer-logo">Timberdart AI</div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Timberdart AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections except hero
+        document.querySelectorAll('section:not(.hero)').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

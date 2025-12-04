@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your AI Automation Audit is confirmed. Get ready for your call with Timberdart AI.">
+    <title>Booking Confirmed | Timberdart AI</title>
+
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1F2937;
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 50%, #BFDBFE 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* ===== CONFIRMATION CONTAINER ===== */
+        .confirmation-container {
+            background: white;
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
+            text-align: center;
+            animation: fadeInScale 0.6s ease;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* ===== SUCCESS ICON ===== */
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10B981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease 0.3s backwards;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ===== TEXT CONTENT ===== */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1F2937;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .confirmation-message {
+            font-size: 1.25rem;
+            color: #059669;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .blueprint-message {
+            font-size: 1.125rem;
+            color: #4B5563;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .email-highlight {
+            color: #2563EB;
+            font-weight: 600;
+        }
+
+        .spam-reminder {
+            font-size: 0.9375rem;
+            color: #F59E0B;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .personal-message {
+            font-size: 1.25rem;
+            color: #1F2937;
+            font-weight: 600;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border-radius: 12px;
+        }
+
+        .name-highlight {
+            color: #2563EB;
+        }
+
+        .next-steps {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: #F9FAFB;
+            border-radius: 12px;
+            border-left: 4px solid #2563EB;
+        }
+
+        .next-steps h2 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 0.75rem;
+            text-align: left;
+        }
+
+        .next-steps p {
+            font-size: 1rem;
+            color: #4B5563;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        .help-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #FEF3C7;
+            border-radius: 12px;
+            border-left: 4px solid #F59E0B;
+        }
+
+        .help-section p {
+            font-size: 0.9375rem;
+            color: #78350F;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .help-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .help-section a {
+            color: #2563EB;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .help-section a:hover {
+            color: #1D4ED8;
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.875rem;
+            color: #6B7280;
+            font-style: italic;
+        }
+
+        .logo {
+            margin-top: 2rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #2563EB;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .confirmation-container {
+                padding: 3rem 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .confirmation-message {
+                font-size: 1.125rem;
+            }
+
+            .blueprint-message {
+                font-size: 1rem;
+            }
+
+            .personal-message {
+                font-size: 1.125rem;
+                padding: 1.25rem;
+            }
+
+            .success-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .success-icon svg {
+                width: 42px;
+                height: 42px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+
+            .confirmation-container {
+                padding: 2.5rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .success-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .success-icon svg {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <!-- Success Icon -->
+        <div class="success-icon">
+            <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <!-- Main Heading -->
+        <h1>You're All Set!</h1>
+
+        <!-- Confirmation Message -->
+        <p class="confirmation-message">Your audit call is confirmed</p>
+
+        <!-- Blueprint Delivery Message -->
+        <p class="blueprint-message">
+            The Agency Profit Accelerator Blueprint has been sent to
+            <span class="email-highlight" id="userEmail">your email</span>
+        </p>
+        <p class="spam-reminder">📬 Don't see it? Check your spam or promotions folder.</p>
+
+        <!-- Personal Message -->
+        <div class="personal-message">
+            Looking forward to talking with you, <span class="name-highlight" id="userName">there</span>!
+        </div>
+
+        <!-- Next Steps -->
+        <div class="next-steps">
+            <h2>📧 What happens next:</h2>
+            <p>Check your email for the blueprint and calendar invite. See you on the call!</p>
+        </div>
+
+        <!-- Help Section -->
+        <div class="help-section">
+            <p>Need assistance? Feel free to <a href="mailto:timberdart@gmail.com">email us</a> or <a href="https://www.linkedin.com/in/vishak-bhaskar-a67aab201/" target="_blank" rel="noopener noreferrer">DM on LinkedIn</a>.</p>
+        </div>
+
+        <!-- Footer Note -->
+        <p class="footer-note">
+            We're here to help!
+        </p>
+
+        <!-- Logo -->
+        <div class="logo">Timberdart AI</div>
+    </div>
+
+    <!-- JavaScript to parse URL parameters -->
+    <script>
+        // Function to get URL parameters
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get email and name from URL parameters
+        const userEmail = getURLParameter('email');
+        const userName = getURLParameter('name');
+
+        // Display email
+        const emailElement = document.getElementById('userEmail');
+        if (userEmail) {
+            emailElement.textContent = userEmail;
+        } else {
+            emailElement.textContent = 'your email';
+        }
+
+        // Display name
+        const nameElement = document.getElementById('userName');
+        if (userName) {
+            nameElement.textContent = userName;
+        } else {
+            nameElement.textContent = 'there';
+        }
+    </script>
+</body>
+</html>
